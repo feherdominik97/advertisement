@@ -1,9 +1,9 @@
 <template lang="pug">
   .container.mx-auto.px-4.py-12
     form(@submit.prevent="submit")
-      .flex.w-full.items-center
-        h1.text-3xl.font-bold.mb-6 Post a New Job
-        div.ml-auto
+      .flex.w-full.items-center.mb-6
+        h1.text-3xl.font-bold Post a New Job
+        div.ml-auto.flex
           button(class="flex items-center bg-yellow-600 text-white font-bold p-1 rounded hover:bg-yellow-700")
             Icon.text-2xl(name="lucide:plus")
 

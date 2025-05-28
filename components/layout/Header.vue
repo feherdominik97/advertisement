@@ -6,9 +6,10 @@
 
       //Hamburger menu for mobile
       div(ref="menuRef" class="relative md:hidden")
-        button(@click="toggleMenu" class="p-2 focus:outline-none")
-          svg(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6")
-            path(stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16")
+        button(@click="toggleMenu" class="p-2 focus:outline-none space-y-1 cursor-pointer")
+          span(class="block w-6 h-0.5 bg-black")
+          span(class="block w-6 h-0.5 bg-black")
+          span(class="block w-6 h-0.5 bg-black")
 
         transition(name="fade")
           ul(v-if="isOpen" class="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg z-10")
