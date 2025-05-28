@@ -5,11 +5,14 @@
       p.ml-auto {{ formatDate(job.created) }}
     .flex.mb-2
       div
-        span.mr-2(v-for="(tag, index) in job.tags" v-show="index < 7" ) {{ tag }}
+        //Only show 4 tags in card preview
+        span.mr-2(v-for="(tag, index) in job.tags" v-show="index < 5" ) {{ tag }}
         span.mr-2(v-show="job.tags.length > 5" ) ...
       p(class="ml-auto font-bold max-md:hidden") {{ job.salary.amount.toLocaleString() + ' ' + job.salary.currency }}
+    //On mobile it needs to be in the next row
     p(class="ml-auto font-bold md:hidden") {{ job.salary.amount.toLocaleString() + ' ' + job.salary.currency }}
 
+    //Hover is used for clickable cards, non-clickables have buttons
     .flex.justify-end.gap-2.text-white(v-if="!hover")
       button(class="p-1 text-2xl bg-gray-600 hover:bg-gray-800 rounded flex justify-center items-center transition-colors duration-300" v-if="hasEdit" @click="showEditModal()")
         Icon(name="lucide:pencil")

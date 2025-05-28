@@ -1,6 +1,6 @@
 <template lang="pug">
   div(v-if="show" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50")
-    .bg-white.rounded-lg.p-6.w-full.max-w-lg.shadow-xl
+    .bg-white.rounded.p-6.w-full.max-w-lg.shadow-xl
       h2.text-xl.font-semibold.mb-4 Edit Job
 
       form(@submit.prevent="submit")
@@ -14,8 +14,8 @@
         input(type="number" v-model.number="editableJob.salary.amount" class="w-full mb-4 p-2 border rounded")
 
         .flex.justify-end.gap-2
-          button(type="button" @click="close" class="px-4 py-2 bg-gray-300 rounded") Cancel
-          button(type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors") Save
+          button(type="button" @click="close" class="px-4 py-2 bg-yellow-600 hover:bg-yellow-700 rounded") Cancel
+          button(type="submit" class="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-800 transition-colors") Save
 </template>
 
 <script setup lang="ts">

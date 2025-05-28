@@ -6,6 +6,7 @@
         p.text-sm Leading platform for finding the best talent or opportunity.
         p.text-xs.text-gray-400 &copy; {{ year }} JobBoard. All rights reserved.
 
+      //Navigation
       .space-y-2
         h3.text-lg.font-semibold Navigation
         ul.space-y-1
@@ -18,6 +19,7 @@
           li
             NuxtLink(to="/about") About Us
 
+      //Social media
       .space-y-2
         h3.text-lg.font-semibold Follow Us
         ul.space-y-1
