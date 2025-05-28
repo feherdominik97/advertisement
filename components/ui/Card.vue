@@ -3,8 +3,6 @@
     .flex.items-center.mb-2
       h2.font-bold.text-xl {{ job.title }}
       p.ml-auto {{ formatDate(job.created) }}
-    .mb-2
-      p.truncate.white-space-pre-line {{ job.description }}
     .flex.mb-2
       div
         span.mr-2(v-for="(tag, index) in job.tags" v-show="index < 7" ) {{ tag }}
@@ -27,6 +25,7 @@ import { formatDate } from "~/utils/date"
 import { deleteJob } from "~/utils/api/jobs"
 import EditJobModal from "~/components/ui/EditJobModal.vue"
 import { putJob } from "~/utils/api/jobs"
+import DOMPurify from 'dompurify'
 
 const props = defineProps<{
   job: Job
