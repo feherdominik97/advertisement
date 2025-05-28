@@ -23,10 +23,6 @@
 
 <script setup lang="ts">
 useHead({ title: 'About - JobBoard' })
-
-definePageMeta({
-  middleware: 'auth'
-})
 </script>
 
 <style scoped>

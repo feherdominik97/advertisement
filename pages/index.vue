@@ -25,10 +25,6 @@
 <script setup lang="ts">
 import Column from "~/components/ui/Column.vue";
 
-definePageMeta({
-  middleware: 'auth'
-})
-
 useHead({ title: 'Home - JobBoard' })
 const auth = useAuthStore()
 </script>

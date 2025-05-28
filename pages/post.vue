@@ -38,6 +38,7 @@ import { useRouter } from 'vue-router'
 import type {Job} from '~/types/Job'
 
 const router = useRouter()
+const auth = useAuthStore()
 
 const form = ref({
   title: '',
@@ -53,6 +54,7 @@ const submit = async () => {
   // Simulate API call or save to store
   const newJob: Job = {
     id: getNextId(),
+    userId: auth.user.id,
     title: form.value.title,
     description: form.value.description,
     tags: form.value.tags.split(',').map((t: string) => t.trim()),

@@ -3,7 +3,7 @@
   section(v-else).container.mx-auto.px-4.py-12
     h1.text-3xl.font-bold.mb-4 Jobs
     .p-4
-      Card(v-for="job in jobs" :job="job" @click="goToDetailed(job.id)")
+      Card(v-for="job in jobs" :job="job" hover @click="goToDetailed(job.id)")
 
 </template>
 
