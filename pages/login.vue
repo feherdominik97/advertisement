@@ -38,13 +38,10 @@ useHead({ title: 'Login - JobBoard' })
 const handleLogin = async () => {
   try {
     await auth.login(username.value, password.value)
-    console.log('Login successful')
     await router.push('/')
     return
   } catch (e) {
-    console.error('Login failed', e)
     alert('Login failed. Please check your credentials.')
   }
-
 }
 </script>

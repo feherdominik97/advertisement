@@ -8,24 +8,25 @@
     .flex.mb-2
       div
         span.mr-2(v-for="(tag, index) in job.tags" v-show="index < 7" ) {{ tag }}
-        span.mr-2(v-show="job.tags.length > 7" ) ...
-      p.ml-auto.font-bold {{ job.salary.amount.toLocaleString() + ' ' + job.salary.currency }}
+        span.mr-2(v-show="job.tags.length > 5" ) ...
+      p(class="ml-auto font-bold max-md:hidden") {{ job.salary.amount.toLocaleString() + ' ' + job.salary.currency }}
+    p(class="ml-auto font-bold md:hidden") {{ job.salary.amount.toLocaleString() + ' ' + job.salary.currency }}
 
-    .flex.justify-end.gap-2.text-white
-      button(class="p-1 text-2xl bg-gray-600 hover:bg-gray-800 rounded flex justify-center items-center transition-colors duration-300" @click="showEditModal()")
+    .flex.justify-end.gap-2.text-white(v-if="!hover")
+      button(class="p-1 text-2xl bg-gray-600 hover:bg-gray-800 rounded flex justify-center items-center transition-colors duration-300" v-if="hasEdit" @click="showEditModal()")
         Icon(name="lucide:pencil")
-      button(class="p-1 text-2xl bg-yellow-600 hover:bg-yellow-700 rounded flex justify-center items-center transition-colors duration-300" @click="onDelete()")
+      button(class="p-1 text-2xl bg-yellow-600 hover:bg-yellow-700 rounded flex justify-center items-center transition-colors duration-300" v-if="hasDelete" @click="onDelete()")
         Icon(name="lucide:trash-2")
     EditJobModal(:show="editFormVisible" :job="job" @close="hideEditModal" @save="onSave")
 
 </template>
 
 <script setup lang="ts">
-import type { Job } from "~/types/Job";
-import { formatDate } from "~/utils/date";
-import { deleteJob } from "~/utils/api/jobs";
-import EditJobModal from "~/components/ui/EditJobModal.vue";
-import { putJob } from "~/utils/api/jobs";
+import type { Job } from "~/types/Job"
+import { formatDate } from "~/utils/date"
+import { deleteJob } from "~/utils/api/jobs"
+import EditJobModal from "~/components/ui/EditJobModal.vue"
+import { putJob } from "~/utils/api/jobs"
 
 const props = defineProps<{
   job: Job

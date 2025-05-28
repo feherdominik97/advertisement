@@ -1,15 +1,15 @@
 <template lang="pug">
-  LoadingSpinner(v-if="!jobs.length")
-  section(v-else).container.mx-auto.px-4.py-12
+  section.container.mx-auto.px-4.py-12
     h1.text-3xl.font-bold.mb-4 My Jobs
-    .p-4
-      Card(v-for="job in jobs" :job="job" @delete="deleteJob" @edit="editJob")
+    LoadingSpinner(v-if="!jobs.length")
+    .p-4(v-else)
+      Card(v-for="job in jobs" :job="job" has-delete has-edit @delete="deleteJob" @edit="editJob")
 
 </template>
 
 <script setup lang="ts">
-import type {Job} from "~/types/Job";
-import {getJobs, getJobsForUser} from "~/utils/api/jobs";
+import type { Job } from "~/types/Job";
+import { getJobsForUser } from "~/utils/api/jobs";
 import Card from "~/components/ui/Card.vue";
 import LoadingSpinner from "~/components/ui/LoadingSpinner.vue";
 
@@ -38,9 +38,4 @@ useHead({ title: 'My Jobs - JobBoard' })
 definePageMeta({
   middleware: 'auth'
 })
-
 </script>
-
-<style scoped>
-
-</style>

@@ -5,11 +5,3 @@
     p.text-gray-600
       slot(name="content")
 </template>
-
-<script setup lang="ts">
-
-</script>
-
-<style scoped>
-
-</style>

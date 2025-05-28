@@ -24,6 +24,3 @@
 <script setup lang="ts">
 useHead({ title: 'About - JobBoard' })
 </script>
-
-<style scoped>
-</style>

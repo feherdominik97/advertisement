@@ -8,7 +8,7 @@
         p.text-lg.text-gray-600.mb-6
           | JobBoard connects top talent with the best companies worldwide. Whether you're hiring or job hunting, you're in the right place.
 
-        NuxtLink(to="/jobs" class="hover:bg-yellow-800 inline-block bg-yellow-700 text-white font-semibold py-3 px-6 rounded-lg transition") Browse Jobs
+        NuxtLink(to="/jobs" class="hover:bg-yellow-700 inline-block bg-yellow-600 text-white font-semibold py-3 px-6 rounded-lg transition") Browse Jobs
 
     section(class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-left bg-gray-100 py-12 mt-12")
       Column
@@ -28,7 +28,3 @@ import Column from "~/components/ui/Column.vue";
 useHead({ title: 'Home - JobBoard' })
 const auth = useAuthStore()
 </script>
-
-<style scoped>
-
-</style>

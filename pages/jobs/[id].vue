@@ -32,10 +32,4 @@ useHead({ title: `${job.value.title} - JobBoard` })
 definePageMeta({
   middleware: 'auth'
 })
-
-
 </script>
-
-<style scoped>
-
-</style>
