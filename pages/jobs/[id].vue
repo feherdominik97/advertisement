@@ -1,6 +1,6 @@
 <template lang="pug">
   LoadingSpinner.self-center(v-if="!job.id")
-  section(v-else).container.mx-auto.px-4.py-12
+  section(v-else).container.mx-auto.px-4.py-12.max-w-250
     .flex.items-center.text-gray-800.mb-4
       h1(class="md:text-3xl max-md:text-xl font-bold") {{ job.title }}
       p(class="ml-auto font-bold md:text-2xl max-md:text-lg") {{ formatDate(job.created) }}

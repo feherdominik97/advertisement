@@ -14,8 +14,8 @@
         input(type="number" v-model.number="editableJob.salary.amount" class="w-full mb-4 p-2 border rounded")
 
         .flex.justify-end.gap-2
-          button(type="button" @click="close" class="px-4 py-2 bg-yellow-600 hover:bg-yellow-700 rounded") Cancel
           button(type="submit" class="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-800 transition-colors") Save
+          button(type="button" @click="close" class="px-4 text-white py-2 bg-yellow-600 hover:bg-yellow-700 rounded") Cancel
 </template>
 
 <script setup lang="ts">

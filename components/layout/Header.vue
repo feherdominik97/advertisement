@@ -12,7 +12,7 @@
           span(class="block w-6 h-0.5 bg-black")
         //The dropdown
         transition(name="fade")
-          ul(v-if="isOpen" class="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg z-10")
+          ul(v-if="isOpen" class="absolute right-0 mt-2 w-48 bg-white border border-gray-100 rounded shadow-lg z-10")
             li(class="px-4 py-2 hover:bg-gray-100")
               NuxtLink(to="/") Home
             li(class="px-4 py-2 hover:bg-gray-100")
