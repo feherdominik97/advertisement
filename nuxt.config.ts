@@ -10,4 +10,9 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/image'
   ],
+  nitro: {
+    prerender: {
+      routes: ['/', '/about', 'login'],
+    },
+  },
 })
